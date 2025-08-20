@@ -1,0 +1,32 @@
+
+# Core RAG Components
+langchain~=0.3.27
+langchain-community~=0.3.27
+sentence-transformers~=5.1.0
+
+# Vector Database
+faiss-cpu
+
+# Document Processing  
+pypdf
+
+# Embeddings & ML
+torch
+transformers
+
+# Demo Interface
+gradio~=5.42.0
+
+# Utilities
+python-dotenv~=1.1.1
+pandas
+numpy~=2.3.2
+tqdm~=4.67.1
+langchain-core~=0.3.74
+langchain-openai~=0.3.30
+aiohttp~=3.12.15
+fastapi~=0.116.1
+pydantic~=2.11.7
+
+fastapi
+uvicorn
