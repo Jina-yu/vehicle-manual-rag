@@ -30,6 +30,7 @@
 운전자가 차량 관련 질문을 자연어로 입력하면, AI가 매뉴얼에서 정확한 정보를 찾아 실시간으로 답변합니다.
 
 ## DEMO Ver.
+![Image](https://github.com/user-attachments/assets/5b100db1-97d7-443a-af00-3afe56729b7f)
 
 
 ### 왜 RAG인가?
