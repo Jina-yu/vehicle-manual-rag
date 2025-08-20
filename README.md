@@ -2,7 +2,7 @@
 ### 경량 RAG 기반 차량 매뉴얼 지능형 Q&A 시스템
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.11-blue.svg" alt="Python">
+  <img src="https://img.shields.io/badge/Python-3.13-blue.svg" alt="Python">
   <img src="https://img.shields.io/badge/LangChain-0.3.13-green.svg" alt="LangChain">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
   <img src="https://img.shields.io/badge/Status-Complete-success.svg" alt="Status">
@@ -28,6 +28,9 @@
 
 현대 팰리세이드 2026 차량 매뉴얼(590페이지)을 기반으로 한 **지능형 Q&A 시스템**입니다.  
 운전자가 차량 관련 질문을 자연어로 입력하면, AI가 매뉴얼에서 정확한 정보를 찾아 실시간으로 답변합니다.
+
+## DEMO Ver.
+
 
 ### 왜 RAG인가?
 
@@ -294,10 +297,10 @@ MIT License - 자세한 내용은 [LICENSE](LICENSE) 파일 참조
 
 **[Jina Yoo]**
 - Email: camellia.afterglow@gmail.com
-- GitHub: [@yourusername](https://github.com/Jina-yu)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/jina-yoo-4ab6292b6/))
+- GitHub: [@Jina-yu](https://github.com/Jina-yu)
+- LinkedIn: [Jina Yoo](https://linkedin.com/in/yourprofile](https://www.linkedin.com/in/jina-yoo-4ab6292b6/))
 
 
 <p align="center">
-  Made with ❤️ and ☕ in 2 days
+  
 </p>
