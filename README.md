@@ -30,6 +30,7 @@
 운전자가 차량 관련 질문을 자연어로 입력하면, AI가 매뉴얼에서 정확한 정보를 찾아 실시간으로 답변합니다.
 
 ## DEMO Ver.
+### Link: https://huggingface.co/spaces/camelfilm/palisade
 ![Image](https://github.com/user-attachments/assets/5b100db1-97d7-443a-af00-3afe56729b7f)
 
 
@@ -83,7 +84,8 @@
 ### Frontend & Deployment
 - **UI**: Gradio 5.9.1
 - **Storage**: 로컬 파일 시스템 (312MB)
-- **Deployment**: Docker 배포 예쩡
+- **Deployment**: Huggingface로 배포 완료 (2025년 9월 2일)
+- https://huggingface.co/spaces/camelfilm/palisade
 
 ## 🏗 시스템 아키텍처
 
