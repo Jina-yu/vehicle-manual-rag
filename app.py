@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
 from gradio import mount_gradio_app
-
 import gradio as gr
 import os
 import sys
@@ -199,6 +198,10 @@ app = FastAPI(title = "🚗 펠리세이드 2026 매뉴얼 AI 어시스턴트")
 demo = create_demo()
 app = mount_gradio_app(app, demo, path = "/")
 
+@app.on_event("startup")
+async def startup_event():
+    if not os.getenv("OPENAI_API_KEY"):
+        print("Warning: OPENAI_API_KEY not found in environment variables")
 
 # 메인 실행
 if __name__ == "__main__":
@@ -215,8 +218,8 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))
     uvicorn.run(app, host="0.0.0.0", port=7860)
 
-    # Gradio 데모 실행
-    demo = create_demo()
+    # # Gradio 데모 실행
+    # demo = create_demo()
 
     print("\n웹 인터페이스 시작 중...")
     print("브라우저에서 자동으로 열립니다.")
@@ -224,9 +227,9 @@ if __name__ == "__main__":
     print("\n종료: Ctrl+C")
 
     # 데모 실행
-    demo.launch(
-        server_name="0.0.0.0",  # 모든 네트워크에서 접속 가능
-        server_port=7860,
-        share=True,  # True로 하면 공개 URL 생성
-        inbrowser=True  # 자동으로 브라우저 열기
-    )
+    # demo.launch(
+    #     server_name="0.0.0.0",  # 모든 네트워크에서 접속 가능
+    #     server_port=7860,
+    #     share=True,  # True로 하면 공개 URL 생성
+    #     inbrowser=True  # 자동으로 브라우저 열기
+    # )
