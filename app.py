@@ -193,10 +193,30 @@ def create_demo():
 
     return demo
 
-app = FastAPI(title = "🚗 펠리세이드 2026 매뉴얼 AI 어시스턴트")
+# FastAPI 앱 생성
+app = FastAPI(title="🚗 팰리세이드 테스트")
 
-demo = create_demo()
-app = mount_gradio_app(app, demo, path = "/")
+# 헬스체크
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
+# 간단한 Gradio 인터페이스
+def simple_chat(message, history):
+    response = f"테스트 응답: {message}"
+    history.append((message, response))
+    return "", history
+
+# Gradio 데모
+with gr.Blocks() as demo:
+    gr.Markdown("# 🚗 팰리세이드 AI 테스트")
+    chatbot = gr.Chatbot(type="tuples")
+    msg = gr.Textbox(label="메시지")
+    msg.submit(simple_chat, [msg, chatbot], [msg, chatbot])
+
+# 마운트
+app = mount_gradio_app(app, demo, path="/")
+
 
 @app.on_event("startup")
 async def startup_event():
