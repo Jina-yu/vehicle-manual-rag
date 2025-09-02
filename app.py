@@ -215,8 +215,8 @@ if __name__ == "__main__":
         print("Warning: OPENAI_API_KEY not found in environment variables")
 
     import uvicorn
-    port = int(os.environ.get("PORT", 7860))
-    uvicorn.run(app, host="0.0.0.0", port=7860)
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
     # # Gradio 데모 실행
     # demo = create_demo()
