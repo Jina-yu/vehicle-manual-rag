@@ -14,19 +14,7 @@ class VehicleManualRAG:
     """
 
     def __init__(self, vector_store: FAISS, use_ollama: bool = True):
-        """
-        초기화 함수
 
-        Args:
-            vector_store: FAISS 벡터 저장소
-            use_ollama: Ollama 사용 여부 (False면 OpenAI)
-
-        면접 포인트: "왜 Ollama를 사용했나요?"
-        → "1. 완전 무료 오픈소스
-           2. 로컬 실행 (데이터 보안)
-           3. 한국어 지원 모델 다수
-           4. 온디바이스 배포 가능"
-        """
         self.vector_store = vector_store
 
         # LLM 설정
@@ -57,15 +45,7 @@ class VehicleManualRAG:
         self.qa_chain = self._create_qa_chain()
 
     def _create_prompt_template(self) -> PromptTemplate:
-        """
-        한국어 차량 매뉴얼 Q&A를 위한 프롬프트 템플릿
 
-        면접 포인트: "프롬프트 엔지니어링의 핵심은?"
-        → "1. 명확한 역할 부여 (차량 전문가)
-           2. 컨텍스트 제공 (검색된 매뉴얼)
-           3. 제약사항 명시 (없으면 '모르겠다')
-           4. 출력 형식 지정 (간결하고 명확하게)"
-        """
         template = """당신은 현대 팰리세이드 차량 전문가입니다.
 아래 차량 매뉴얼 내용을 참고하여 질문에 답변해주세요.
 
@@ -88,15 +68,7 @@ class VehicleManualRAG:
         )
 
     def _create_qa_chain(self) -> RetrievalQA:
-        """
-        RAG 체인 생성
 
-        면접 포인트: "RetrievalQA 체인의 작동 원리는?"
-        → "1. 질문 임베딩
-           2. 벡터 검색으로 관련 청크 찾기
-           3. 청크들을 컨텍스트로 프롬프트 구성
-           4. LLM이 컨텍스트 기반 답변 생성"
-        """
         # 체인 타입 설정
         chain_type_kwargs = {
             "prompt": self.prompt_template,
